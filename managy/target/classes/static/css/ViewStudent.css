@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.nav{
+    background: #000;
+    padding: 15px;
+    display: flex;
+    flex: 1;
+    }
+.nav h1{
+    display: block;
+    text-align: center ;
+    color: red;
+    width: 80%;
+
+}
+body{
+    background: rgb(113, 194, 241);
+}
+
+.warn h1{
+    color: red;
+    text-align: center;
+}
+.container {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-student {
+    display: flex;
+    border-radius: 10px;
+    background: rgb(64, 90, 89);
+    box-shadow: 0 0 15px black;
+    min-height: 400px;
+    min-width: 45%;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
+    padding: 10px;
+}
+
+.view-student .left-box img {
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+}
+
+.form-group label,input{
+    display: block;
+}
+
+.form-group label{
+font-size: 19px;
+margin: 5px 0;
+color: white;
+text-transform: uppercase;
+text-decoration: underline;
+}
+
+
+.form-group input{
+    padding: 10px;
+    font-size: 19px;
+    border-radius: 10px;
+    border: 1px solid;
+    width: 360px;
+    margin-top: 10px;
+}
+
+#updatebutton{
+    margin-top: 10px;
+    background: rgb(1, 22, 255);
+    color: white;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#deletebutton{
+    margin-top: 10px;
+    background: red;
+    color: white;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+
+input[type="file"]{
+    color: white;
+    border: 1px solid black;
+}
+
+.back-btn{
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgb(255, 196, 0);
+    border: none;
+}

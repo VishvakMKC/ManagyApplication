@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>students</title>
+    <link rel="stylesheet" href="/css/Students.css">
+
+</head>
+
+<body>
+    <div th:if="${success}" class="success">
+        <h2 th:text="${success}"></h2>
+    </div>
+    <div th:if="${deleted}" class="deleted">
+        <h2 th:text="${deleted}"></h2>
+    </div>
+    <h1>Students</h1>
+    
+    <a th:href="@{/logout}" class="logout">Logout</a>
+    <div th:if="${admin}">
+        <a th:href="@{/admin/home}" class="admin-home">Home</a>
+        <a th:href="@{/admin/createstudent}" class="create">Create a new student</a>
+    </div>
+    <div th:if="${user}">
+        <a th:href="@{/user/home}" class="admin-home">Home</a>
+        <a th:href="@{/user/createstudent}" class="create">Create a new student</a>
+    </div> 
+    <div class="search-student">
+        <form th:action="${user ? '/user/liststudents' : (admin ? '/admin/liststudents' : '')}"
+        >
+            <div class="search-group">
+                <label for="regno">
+                    Search a student:
+                </label>
+                <input type="text" placeholder="Enter register number" name="regno" th:value="${regno}" id="regno">
+                <input type="submit" value="Search">
+                <input type="reset" value="Clear">
+            </div>
+        </form>
+    </div>
+    <br><br>
+    <div class="container">
+        <div th:each="student : ${students}" class="student-card">
+            <div class="details">
+                <h3 th:text="${student.regno}"></h3>
+                <p th:text="${student.name}"></p>
+                <p th:text="${student.departmentCode}"></p>
+                <p>Batch <span th:text="${student.year}"></span></p>
+            </div>
+            <div class="actions" th:if="${admin}">
+                <a th:href="@{/admin/viewstudent/{regno}(regno=${student.regno})}" class="view">View</a>
+                <a th:href="@{/admin/updatestudent/{regno}(regno=${student.regno})}" class="update">Update</a>
+                <a th:href="@{/admin/deletestudent/{regno}(regno=${student.regno})}" class="delete">Delete</a>
+            </div>
+            <div class="actions" th:if="${user}">
+                <a th:href="@{/user/viewstudent/{regno}(regno=${student.regno})}" class="view">View</a>
+                <a th:href="@{/user/updatestudent/{regno}(regno=${student.regno})}" class="update">Update</a>
+                <!-- <a th:href="@{/user/deletestudent/{regno}(regno=${student.regno})}" class="delete">Delete</a> -->
+
+            </div>
+        </div>
+
+    </div>
+    <div th:if="${totalPages > 1 && admin}" class="pagination">
+        <div>
+            Total Students: [[${totalItems}]]
+        </div>
+        <div>
+            <span th:each="i : ${#numbers.sequence(1,totalPages)}">
+                <a th:if="${currentPage != i}" th:href="@{'/admin/students/' + ${i}}">[[${i}]]</a>
+                <span th:unless="${currentPage != i}">[[${i}]]</span>
+                &nbsp; &nbsp;
+            </span>
+        </div>
+        <div>
+            <a th:if="${currentPage &gt; 1}" th:href="@{'/admin/students/' + ${currentPage - 1}}">Previous</a>
+            <span th:unless="${currentPage &gt; 1}">Previous</span>
+        </div>
+        <div>
+            <a th:if="${currentPage &lt; totalPages}" th:href="@{'/admin/students/' + ${currentPage + 1}}">Next</a>
+            <span th:unless="${currentPage &lt; totalPages}">Next</span>
+        </div>
+
+        <div>
+            <a th:if="${currentPage < totalPages}" th:href="@{'/admin/students/' + ${totalPages}}">Last</a>
+            <span th:unless="${currentPage < totalPages}">Last</span>
+        </div>
+    </div>
+    <div th:if="${totalPages > 1 && user}" class="pagination">
+        <div>
+            Total Students: [[${totalItems}]]
+        </div>
+        <div>
+            <span th:each="i : ${#numbers.sequence(1,totalPages)}">
+                <a th:if="${currentPage != i}" th:href="@{'/user/students/' + ${i}}">[[${i}]]</a>
+                <span th:unless="${currentPage != i}">[[${i}]]</span>
+                &nbsp; &nbsp;
+            </span>
+        </div>
+        <div>
+            <a th:if="${currentPage &gt; 1}" th:href="@{'/user/students/' + ${currentPage - 1}}">Previous</a>
+            <span th:unless="${currentPage &gt; 1}">Previous</span>
+        </div>
+        <div>
+            <a th:if="${currentPage &lt; totalPages}" th:href="@{'/user/students/' + ${currentPage + 1}}">Next</a>
+            <span th:unless="${currentPage &lt; totalPages}">Next</span>
+        </div>
+
+        <div>
+            <a th:if="${currentPage < totalPages}" th:href="@{'/user/students/' + ${totalPages}}">Last</a>
+            <span th:unless="${currentPage < totalPages}">Last</span>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Department</title>
+    <link rel="stylesheet" href="/css/viewdepartment.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>View Department</h2>
+       <div class="object" th:if="${viewdept}">
+        <div class="form-group">
+
+            <label for="departmentName">Department Name:</label>
+            <input type="text" id="departmentName" name="departmentName" th:value="${viewdept.departmentName}"
+                required readonly>
+        </div>
+        <div class="form-group">
+            <label for="departmentCode">Department Code:</label>
+            <input type="text" id="departmentCode" name="departmentCode" th:value="${viewdept.departmentCode}"
+                required readonly>
+        </div>
+        <div class="form-group">
+            <label for="hod">Head of Department:</label>
+            <input type="text" id="hod" name="hod" th:value="${viewdept.hod}" required readonly>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" th:value="${viewdept.email}" required readonly>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" th:value="${viewdept.phone}" required readonly>
+        </div>
+       </div>
+    </div>
+
+</body>
+
+</html>

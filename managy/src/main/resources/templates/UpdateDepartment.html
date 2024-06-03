@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Department</title>
+    <link rel="stylesheet" href="/css/createdepartment.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Update Department</h2>
+        <form
+            th:action="${user ? '/user/updatedepartment/' + updept.departmentCode : (admin ? '/admin/updatedepartment/' + updept.departmentCode : '#')}"
+            method="post" th:object="${department}">
+
+            <div class="form-group">
+
+                <label for="departmentName">Department Name:</label>
+                <input type="text" id="departmentName" name="departmentName" th:value="${updept.departmentName}"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="departmentCode">Department Code:</label>
+                <input type="text" id="departmentCode" name="departmentCode" th:value="${updept.departmentCode}"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="hod">Head of Department:</label>
+                <input type="text" id="hod" name="hod" th:value="${updept.hod}" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" th:value="${updept.email}" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" th:value="${updept.phone}" required>
+            </div>
+            <input type="submit" value="Update Department">
+        </form>
+    </div>
+
+</body>
+
+</html>

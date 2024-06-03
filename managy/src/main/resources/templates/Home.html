@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Managy HomePage</title>
+    <link rel="stylesheet" type="text/css" href="/css/Home.css" />
+    <link rel="stylesheet" th:href="@{/css/Home.css}" />
+</head>
+<style>
+</style>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <h1 class="title">
+               <img src="/images/document.png" height="50" width="50" alt="">
+                Managy
+            </h1>
+            <div class="nav-links">
+                <ul>
+                    <li class="nav-link"><a href="#about">About</a></li>
+                    <li class="nav-link"><a href="#services">Services</a></li>
+                    <li class="nav-link"><a href="#contactus">Contact Us</a></li>
+                    <li class="nav-link"><a href="/login">Log In</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section id="home">
+            <div class="content">
+                <p>Struggling to manage the records?</p>
+                <p>Don't worry, manage all of your records hassle-free</p>
+                <h1>Manage with Managy
+
+                </h1>
+                <p><a href="/login">Log In</a> now
+                </p>
+            </div>
+        </section>
+        <section id="about">
+            <div class="content">
+                <h1>About Us</h1>
+                <p>
+                    Welcome to Managy, your one-stop solution for hassle-free records management. At Managy, we
+                    understand the complexities and challenges that come with keeping track of numerous records. Our
+                    platform is designed to simplify and streamline your record management process, ensuring that you
+                    can focus on what truly matters.
+                    <br><br>
+                    Our intuitive and user-friendly interface allows you to effortlessly manage, update, and organize
+                    all your records in one place. Whether you're handling business documents, personal files, or
+                    academic records, Managy provides the tools you need to keep everything in order.
+                    <br><br>
+                  
+                </p>
+            </div>
+        </section>
+        <section id="services">
+            <div class="content">
+                <h1>Services</h1>
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-pic">
+                            <img th:src="@{/images/record-managing.jpg}" alt="record-managing">
+                        </div>
+                        <div class="card-body">
+                            <span>Managy</span> serves as a comprehensive solution for handling various types
+                            of records, including customer data, financial documents, inventory lists, and personal
+                            records.
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-pic">
+                            <img th:src="@{/images/record-managing-2.png}" alt="record-managing">
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Send your organization details, database design, admin and users details to
+                                <span>Managy</span> and our team will provide you a comprehensive record managing
+                                application for your organization
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-pic">
+                            <img th:src="@{/images/record-managing-3.jpeg}" alt="record-managing">
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Managing records can be overwhelming, but with <span>Managy</span>, you can handle all
+                                your records
+                                efficiently and securely, freeing up your time to focus on what really matters.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contactus">
+            <h1>Contact Us</h1>
+            <div class="content">
+                <div class="left">
+                    <ul>
+                        <li><a href="#top">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="/login">Log In</a></li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li>
+                          Phone &nbsp;: &nbsp;  +91 &nbsp; 98765 &nbsp; 56789
+                        </li>
+                        <li>
+                            Location  &nbsp;: &nbsp; Madurai  
+                        </li>
+                        <li>
+                            Email  &nbsp;: &nbsp; vishuu@gmail.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copy-right">
+                <h1>
+                &copy; &nbsp; 2024 &nbsp; www.managy.com
+
+                </h1>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
